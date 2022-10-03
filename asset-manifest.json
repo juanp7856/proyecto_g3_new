@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/proyecto_g3_new/static/css/main.dcc3edb8.css",
+    "main.js": "/proyecto_g3_new/static/js/main.222d2fbc.js",
+    "static/js/787.d1c7c44d.chunk.js": "/proyecto_g3_new/static/js/787.d1c7c44d.chunk.js",
+    "static/media/mouseykeyboards.png": "/proyecto_g3_new/static/media/mouseykeyboards.8ee01938b9c486329dbc.png",
+    "static/media/standardmousepad.png": "/proyecto_g3_new/static/media/standardmousepad.85462544c61bb2d22f85.png",
+    "static/media/pc_recomendada.png": "/proyecto_g3_new/static/media/pc_recomendada.6db8e60d6cac9b9fea58.png",
+    "static/media/windows.png": "/proyecto_g3_new/static/media/windows.8fdd45c685512443838d.png",
+    "static/media/ventiladores.png": "/proyecto_g3_new/static/media/ventiladores.8edf2df9c1f1c7699b57.png",
+    "static/media/headset.png": "/proyecto_g3_new/static/media/headset.298460ef1a029d0961f0.png",
+    "static/media/placamadre.png": "/proyecto_g3_new/static/media/placamadre.2abc6dba98d8e56fe8f7.png",
+    "static/media/refliquida.png": "/proyecto_g3_new/static/media/refliquida.2acfb22f34d9a759cf80.png",
+    "static/media/cpu.png": "/proyecto_g3_new/static/media/cpu.d2cb8213730119bce641.png",
+    "static/media/antena.png": "/proyecto_g3_new/static/media/antena.8b424d6918f5e34dcbee.png",
+    "static/media/Footer.PNG": "/proyecto_g3_new/static/media/Footer.e4333800d622b13c96c3.PNG",
+    "static/media/ram.png": "/proyecto_g3_new/static/media/ram.ffa6ee0c98e9fb3d189f.png",
+    "static/media/XLmousepad.png": "/proyecto_g3_new/static/media/XLmousepad.0f6aa50bc879665fd549.png",
+    "static/media/bootstrap-icons.woff?": "/proyecto_g3_new/static/media/bootstrap-icons.e559bf06bc84fd9525e6.woff",
+    "static/media/ssd.png": "/proyecto_g3_new/static/media/ssd.6e8cc7979b8b8c0a08ec.png",
+    "static/media/bootstrap-icons.woff2?": "/proyecto_g3_new/static/media/bootstrap-icons.ea98e12d2d58747f9fc5.woff2",
+    "static/media/LOGO.png": "/proyecto_g3_new/static/media/LOGO.489fa3ea7ac36a6ae26e.png",
+    "static/media/MrTop5.jpg": "/proyecto_g3_new/static/media/MrTop5.91df2eb820a1e7c7a0ba.jpg",
+    "static/media/fuentepoder.png": "/proyecto_g3_new/static/media/fuentepoder.73d7fc04d863973392c5.png",
+    "static/media/googlepay.png": "/proyecto_g3_new/static/media/googlepay.fcbe59f91821d82a16a7.png",
+    "static/media/armado.png": "/proyecto_g3_new/static/media/armado.8b13481151643a7cde29.png",
+    "static/media/applepay.png": "/proyecto_g3_new/static/media/applepay.79c23ff0104f3c7f0fca.png",
+    "static/media/ShortCircuit.jpg": "/proyecto_g3_new/static/media/ShortCircuit.58652824846de98cb110.jpg",
+    "static/media/paypal.png": "/proyecto_g3_new/static/media/paypal.518ac7157897e89f6dd0.png",
+    "index.html": "/proyecto_g3_new/index.html",
+    "main.dcc3edb8.css.map": "/proyecto_g3_new/static/css/main.dcc3edb8.css.map",
+    "main.222d2fbc.js.map": "/proyecto_g3_new/static/js/main.222d2fbc.js.map",
+    "787.d1c7c44d.chunk.js.map": "/proyecto_g3_new/static/js/787.d1c7c44d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dcc3edb8.css",
+    "static/js/main.222d2fbc.js"
+  ]
+}
