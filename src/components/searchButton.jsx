@@ -27,13 +27,13 @@ const Historia6 = () => {
   const enrutarPag = (nombre) => {
     console.log("asd")
     if (nombre === "NVIDIA RTX 3070") {
-        navigate("/grafdet");
+        navigate("/proyecto_g3_new/grafdet");
     } else if (nombre === "INTEL CORE I-5-12700F 12-CORE") {
-        navigate("/cpudet");
+        navigate("/proyecto_g3_new/cpudet");
     } else if (nombre === "16 GB DDR4 DUAL CHANNEL") {
-        navigate("/ramdet");
+        navigate("/proyecto_g3_new/ramdet");
     } else if (nombre === "CORSAIR HIDRO SERIES H100I RGB") {
-        navigate("/refliq");
+        navigate("/proyecto_g3_new/refliq");
     }
   }
 

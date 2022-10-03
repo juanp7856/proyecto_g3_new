@@ -121,8 +121,8 @@ const Custombuild = () => {
                 <h1 className="text-white">¡Arma tu propia PC!</h1>
             </div>
             <div className="mb-5 col-6">
-                <button className="btn btn-light" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/")}}>ATRÁS</button>
-                <button className="btn btn-success" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/cart"); guardarOrden()}}>
+                <button className="btn btn-light" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/proyecto_g3_new/")}}>ATRÁS</button>
+                <button className="btn btn-success" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/proyecto_g3_new/cart"); guardarOrden()}}>
                     <i class="bi bi-cart-fill"></i> CARRITO
                 </button>
             </div>

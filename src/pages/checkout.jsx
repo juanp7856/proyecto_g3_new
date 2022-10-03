@@ -121,10 +121,10 @@ const Checkout = () => {
 
                     <div className="row" style={{justifyContent:"space-around"}} >
                         <div className="col" style={{textAlign:"start"}}>
-                            <button type="submit" class="btn btn-danger" onClick={()=>{navigate("/cart")}}>Return to cart</button>
+                            <button type="submit" class="btn btn-danger" onClick={()=>{navigate("/proyecto_g3_new/cart")}}>Return to cart</button>
                         </div>
                         <div className="col" style={{textAlign:"end"}}>
-                            <button type="submit" class="btn btn-success" onClick={()=>{navigate("/custombuild")}}>Continue to shopping</button>
+                            <button type="submit" class="btn btn-success" onClick={()=>{navigate("/proyecto_g3_new/custombuild")}}>Continue to shopping</button>
                         </div>
                         
                         

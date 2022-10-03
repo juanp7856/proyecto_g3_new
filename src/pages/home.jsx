@@ -12,11 +12,11 @@ const Home = () => {
     const navigate = useNavigate();
 
     const customBuildonClick = () => {
-        navigate("/custombuild")
+        navigate("/proyecto_g3_new/custombuild")
     }
 
     const buildforBegginersonClick = () => {
-        navigate("/prebuiltselect")
+        navigate("/proyecto_g3_new/prebuiltselect")
     }
 
     return <div className="body bg-dark">

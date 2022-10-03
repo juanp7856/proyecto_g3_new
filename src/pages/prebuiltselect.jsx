@@ -15,8 +15,8 @@ const PrebuiltSelect = () => {
                 <h1 className="text-white">¿Qué necesitas?</h1>
             </div>
             <div className="mb-5" style={{ width: "50%", float: "right"}}>
-                <button className="btn btn-light" style={{ width: "125px", marginRight: "15px" }} onClick={()=>{navigate("/")}}>ATRÁS</button>
-                <button className="btn btn-success" style={{ width: "125px", marginLeft: "15px" }} onClick={()=>{navigate("/prebuilt")}}>SIGUIENTE</button>
+                <button className="btn btn-light" style={{ width: "125px", marginRight: "15px" }} onClick={()=>{navigate("/proyecto_g3_new/")}}>ATRÁS</button>
+                <button className="btn btn-success" style={{ width: "125px", marginLeft: "15px" }} onClick={()=>{navigate("/proyecto_g3_new/prebuilt")}}>SIGUIENTE</button>
             </div>
         </div>
 

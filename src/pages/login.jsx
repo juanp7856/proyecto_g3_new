@@ -11,13 +11,13 @@ const Login = () => {
     const navigate = useNavigate();
 
     const signUpOnclick = () => {
-        navigate("/register")
+        navigate("/proyecto_g3_new/register")
 
     }
 
     const logInOnclick = () => {
         if (email !== "" && password !== "") {
-            navigate("/")
+            navigate("/proyecto_g3_new/")
         }
 
     }
