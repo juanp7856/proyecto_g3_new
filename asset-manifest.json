@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/proyecto_g3_new/static/css/main.dcc3edb8.css",
-    "main.js": "/proyecto_g3_new/static/js/main.222d2fbc.js",
+    "main.js": "/proyecto_g3_new/static/js/main.fd41bef0.js",
     "static/js/787.d1c7c44d.chunk.js": "/proyecto_g3_new/static/js/787.d1c7c44d.chunk.js",
     "static/media/mouseykeyboards.png": "/proyecto_g3_new/static/media/mouseykeyboards.8ee01938b9c486329dbc.png",
     "static/media/standardmousepad.png": "/proyecto_g3_new/static/media/standardmousepad.85462544c61bb2d22f85.png",
@@ -29,11 +29,11 @@
     "static/media/paypal.png": "/proyecto_g3_new/static/media/paypal.518ac7157897e89f6dd0.png",
     "index.html": "/proyecto_g3_new/index.html",
     "main.dcc3edb8.css.map": "/proyecto_g3_new/static/css/main.dcc3edb8.css.map",
-    "main.222d2fbc.js.map": "/proyecto_g3_new/static/js/main.222d2fbc.js.map",
+    "main.fd41bef0.js.map": "/proyecto_g3_new/static/js/main.fd41bef0.js.map",
     "787.d1c7c44d.chunk.js.map": "/proyecto_g3_new/static/js/787.d1c7c44d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dcc3edb8.css",
-    "static/js/main.222d2fbc.js"
+    "static/js/main.fd41bef0.js"
   ]
 }
