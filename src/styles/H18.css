@@ -1,0 +1,14 @@
+.listatext{
+    font-size:x-large;
+    padding-top: 20px;
+
+}
+.fila{
+    background-color: white;
+    width: 70%;
+   text-align: justify;
+   border-collapse:separate;
+   margin: 0 0 1em 0;
+   caption-side: top;
+   border-radius: 2%;
+}

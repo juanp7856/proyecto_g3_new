@@ -1,0 +1,21 @@
+.listaimg{
+    height:50px; 
+    width:75px;
+}
+
+.listatext{
+    color: black;
+}
+
+.listapr{
+    color: black;
+    font-weight: bold;
+}
+
+.tarjetaco {
+    display: flex;
+    justify-content:space-between;
+    height:70px;
+    align-items: center;
+    background-color: white;
+}

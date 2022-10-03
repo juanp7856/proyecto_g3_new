@@ -1,0 +1,44 @@
+.bloque {
+    justify-content: left;
+    height: 100%;
+}
+
+
+.listatitle{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    text-align: left;
+    padding-top: 10px;
+    font-size:large;
+
+    
+}
+
+.listatext{
+    color: rgb(0, 0, 0);
+    text-align: justify;
+    padding-top: 1px;
+    font-size:medium;  
+    margin-top: 10px;
+}
+
+.listasubtext{
+    color: rgb(0, 0, 0);
+    text-align: justify;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.container-reseñas{
+    width: 100%;
+   text-align: justify;
+   border-collapse:separate;
+   margin: 0 0 1em 0;
+   caption-side: top;
+   
+}
+.row1{
+    border:solid rgb(116, 116, 116);
+    border-top-width: 6px;
+    border-left-width: 8px;
+}

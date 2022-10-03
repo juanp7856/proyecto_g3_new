@@ -1,0 +1,31 @@
+.metpago {
+    width: 25%;
+    margin-top: 5px;
+}
+
+.listaimg{
+    height:50px; 
+    width:75px;
+}
+
+.listatext{
+    color: black;
+}
+
+.listapr{
+    color: black;
+    font-weight: bold;
+}
+
+.tarjetaco {
+    display: flex;
+    justify-content:space-between;
+    height:70px;
+    align-items: center;
+    background-color: gray;
+}
+
+.both3
+{
+    background-color: rgb(151, 105, 194);
+}
