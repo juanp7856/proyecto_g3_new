@@ -1,40 +1,44 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/searchButton.css";
 import React from "react"
-import Header from "../components/Header"
 import "bootstrap/dist/css/bootstrap.css"
-import { Navigate, useNavigate } from "react-router-dom";
-import {graphic, processor, memory, storage, cooling, windows, psupply} from "../modules/components.js"
+import { useNavigate } from "react-router-dom";
+import { RUTA_BACKEND } from "../conf";
 
 
- var data = require("../modules/data.json");
 
 
 const Historia6 = () => {
     const [value, setValue] = useState("");
     const [activo,setActivo] = useState(false);
+    const [listaProductos,setlistaProductos] = useState([]);
     const navigate = useNavigate();
 
     const alternarBarra = () => {
         setActivo(!activo);
     }
 
+    const httpObtenerProductos = async () => {
+      const resp = await fetch(`${RUTA_BACKEND}/productos`)
+      const data = await resp.json()
+      setlistaProductos(data)
+      console.log(data)
+    }
+
+    useEffect(() => {
+        httpObtenerProductos()
+    }, [])
 
   const onChange = (event) => {
     setValue(event.target.value);
   };
 
   const enrutarPag = (nombre) => {
-    console.log("asd")
-    if (nombre === "NVIDIA RTX 3070") {
-        navigate("/proyecto_g3_new/grafdet");
-    } else if (nombre === "INTEL CORE I-5-12700F 12-CORE") {
-        navigate("/proyecto_g3_new/cpudet");
-    } else if (nombre === "16 GB DDR4 DUAL CHANNEL") {
-        navigate("/proyecto_g3_new/ramdet");
-    } else if (nombre === "CORSAIR HIDRO SERIES H100I RGB") {
-        navigate("/proyecto_g3_new/refliq");
-    }
+    listaProductos.map((item) => {
+      if(nombre === item.nombre) {
+        navigate(`/proyecto_g3_new/prod/${item.id}`)
+      }
+    })
   }
 
 //   const onSearch = (searchTerm) => {
@@ -43,13 +47,12 @@ const Historia6 = () => {
 //     console.log("search ", searchTerm);
 //   };
 
-  const clickLupa = () => {
-    // agregarData(graphic, processor, memory, storage, cooling, windows, psupply);
-    // alternarBarra;
+  // const clickLupa = () => {
+  //   // agregarData(graphic, processor, memory, storage, cooling, windows, psupply);
+  //   // alternarBarra;
     
-  }
+  // }
 
-//   <button className="btn-header"> <i class="bi bi-search"></i> </button>
 
   return (
       <div className="search-container">
@@ -59,10 +62,10 @@ const Historia6 = () => {
         </div>
         <div className="dropdown">
           {
-          data
+          listaProductos
             .filter((item) => {
               const searchTerm = value.toLowerCase();
-              const fullName = item.name.toLowerCase();
+              const fullName = item.nombre.toLowerCase();
 
               return (
                 searchTerm &&
@@ -74,12 +77,11 @@ const Historia6 = () => {
             .map((item) => 
                 (
               <div
-                onClick={()=>{enrutarPag(item.name)}}
+                onClick={()=>{enrutarPag(item.nombre)}}
                 className="dropdown-row"
-                key={item.name}
+                key={item.nombre}
               >
-                
-                {item.name}
+                {item.nombre}
               </div>
             ))}
         </div>
