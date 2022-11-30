@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Header from "../components/Header"
 import "bootstrap/dist/css/bootstrap.css"
 import PC from "../assets/pc_recomendada.png"
@@ -15,11 +15,27 @@ import SSD from "../assets/pc_comps/ssd.png"
 import VENTILADORES from "../assets/pc_comps/ventiladores.png"
 import WINDOWS from "../assets/pc_comps/windows.png"
 import ARMADO from "../assets/armado.png"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
+import { RUTA_BACKEND } from "../conf"
+import { useState } from "react"
 
 const Prebuilt = () => {
+    const params = useParams();
+
+    const [productos, setProductos] = useState([]);
 
     const navigate = useNavigate();
+
+    const httpObtenerProductos = async () => {
+        const resp = await fetch(`${RUTA_BACKEND}/build?id=${params.id}`)
+        const data = await resp.json()
+        setProductos(data)
+        console.log(data)
+    }
+
+    useEffect(() => {
+        httpObtenerProductos()
+    }, [])
 
     return <div className="bg-dark">
         <Header />
