@@ -3,6 +3,7 @@ import Header from "../components/Header"
 import "bootstrap/dist/css/bootstrap.css"
 import "../styles/H8.css"
 import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
 
 
 let itemsAComprar = JSON.parse(localStorage.getItem('ordenes') || "[]")
@@ -13,18 +14,20 @@ const Cart = () => {
 
     const [active,setActive] = useState(false)
 
-    const crearTarjeta = (name, price, img, id) => {
-        return <div className="tarjetaco">
+    const crearTarjeta = (comp) => {
+
+
+        return <div className="tarjetaco pt-4 mb-3">
             <div style={{width:"20%",float: "left"}}>
-                <img className="listaimg" src={img} alt="IMG"/>
+                <img className="listaimg" src={"img"} alt="IMG"/>
             </div>
             <div style={{width:"80%", float: "right", marginBottom: "20px"}}>
-                <div style={{width:"50%", float: "left"}}><p className="listatext">{name}</p></div>
-                <div style={{width:"25%", float: "left",  marginTop: "22px"}}><p className="listapr">{price}$</p></div>
+                <div style={{width:"50%", float: "left"}}><p className="listatext">{comp.nombre}</p></div>
+                <div style={{width:"25%", float: "left",  marginTop: "22px"}}><p className="listapr">{comp.precio}$</p></div>
                 <button type="button" style={{width:"25%", float: "right",fontSize:"40px", backgroundColor: "transparent",border: "none", marginTop: "22px"}} onClick={
                     ()=>{
                         for (let x=0;x<itemsAComprar.length;x++) {
-                            if(itemsAComprar[x].id === id) {
+                            if(itemsAComprar[x].id === comp.id) {
                                 itemsAComprar.splice(x,1)
                                 localStorage.setItem('ordenes',JSON.stringify(itemsAComprar))
                                 setActive(true)
@@ -37,15 +40,24 @@ const Cart = () => {
         </div>
     }
 
-    const renderizarpag = () => {
-        setActive(true)
-        setTimeout(()=>{setActive(false)},1);
-    }
+    // const onClickFunc = () => {
+    //     localStorage.setItem('monto',JSON.stringify({value: montoTotal}))
+    //     navigate("/proyecto_g3_new/checkout")
+    // }
+
+    // const renderizarpag = () => {
+    //     setActive(true)
+    //     setTimeout(()=>{setActive(false)},1);
+    // }
+
+    // useEffect(() => {
+    //     renderizarpag()
+    // }, [])
     
     const listarTarjetas = (active) => {
 
         let tarjetas = itemsAComprar.map( (comps) => {
-            return crearTarjeta(comps.name, comps.price, comps.img, comps.id)
+            return crearTarjeta(comps)
         });
 
         return tarjetas
