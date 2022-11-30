@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Header from "../components/Header"
 import "bootstrap/dist/css/bootstrap.css"
 import PC from "../assets/pc_recomendada.png"
@@ -6,6 +6,7 @@ import "../styles/H12.css"
 import CPU from "../assets/pc_comps/cpu.png"
 import {graphic, processor, memory, storage, cooling, windows, psupply} from "../modules/components.js"
 import { useNavigate } from "react-router-dom"
+import { RUTA_BACKEND } from "../conf"
 
 let itemsAComprar = []
 
@@ -13,47 +14,65 @@ let itemsAComprar = []
 const Custombuild = () => {
     
     const navigate = useNavigate();
-    
-
-
-    const [itemSelec, setitemSelect] = useState("graphic");
+    const [itemSelec, setitemSelect] = useState("Graphics");
     const [precioComps, setprecioComps] = useState(0);
+    const [productos, setProductos] = useState([]);
 
-    const alternarSelec = (itemSelec) => {
-        if (itemSelec === "graphic") {
-            return graphic;
-        } else if (itemSelec === "processor") {
-            return processor;
-        } else if (itemSelec === "memory") {
-            return memory;
-        } else if (itemSelec === "storage") {
-            return storage;
-        } else if (itemSelec === "cooling") {
-            return cooling;
-        } else if (itemSelec === "windows") {
-            return windows;
-        } else if (itemSelec === "psupply") {
-            return psupply;
-        }
+    const httpObtenerProductos = async () => {
+        const resp = await fetch(`${RUTA_BACKEND}/productos`)
+        const data = await resp.json()
+        setProductos(data)
     }
 
-    const crearTarjeta = (name,price,img, id) => {
+    useEffect(() => {
+        httpObtenerProductos()
+    }, [])
+
+    const alternarSelec = (itemSelec) => {
+        let productoss = []
+        productos.map( (producto) => {
+            if (producto.categoria === itemSelec) {
+                productoss.push(producto)
+            }
+        })
+        return productoss;
+        // if (itemSelec === "Graphics") {
+        //     const resp = await fetch(`${RUTA_BACKEND}/productos/categoria?cat=Graphics`)
+        //     const data = await resp.json()
+        //     setProductos(data)
+        //     return productos;
+        // } else if (itemSelec === "Processor") {
+        //     return processor;
+        // } else if (itemSelec === "Memory") {
+        //     return memory;
+        // } else if (itemSelec === "storage") {
+        //     return storage;
+        // } else if (itemSelec === "cooling") {
+        //     return cooling;
+        // } else if (itemSelec === "windows") {
+        //     return windows;
+        // } else if (itemSelec === "psupply") {
+        //     return psupply;
+        // }
+    }
+
+    const crearTarjeta = (comp) => {
         
         return <div className="bg-white tarjeta">
-            <img src={img} className="tarjetaimg"/>
+            <img src={"img"} className="tarjetaimg"/>
             {/* <div className="col-2">
                 <img src={PC} className="tarjetaimg"/>
             </div> */}
             <div className="tarjetaname">
-                {name}
+                {comp.nombre}
             </div>
             <div>
-                ${price}
+                ${comp.precio}
             </div>
             <button className="btn btn-success tarjetabutton" onClick={
                 () => {
-                    setprecioComps(precioComps + price)
-                    agregarCompra(name, price, img, id)
+                    setprecioComps(precioComps + comp.precio)
+                    agregarCompra(comp)
                 }
             }>+</button>
         </div>
@@ -63,40 +82,31 @@ const Custombuild = () => {
         let arrComps = alternarSelec(itemSelec);
 
         let tarjetas = arrComps.map( (comps) => {
-            return crearTarjeta(comps.name, comps.price, comps.img, comps.id)
+            return crearTarjeta(comps)
         });
 
         return tarjetas
     }
 
-    const agregarCompra = (name, price, img) => {
-        let comp = {}
-        
-        comp.name = name
-        comp.price = price
-        comp.img = img
-
+    const agregarCompra = (comp) => {
 
         itemsAComprar.push(comp)
     }
 
     const guardarOrden = () => {
-        for (let i=0;i<itemsAComprar.length;i++) {
-            itemsAComprar[i].id = `${i}-${itemsAComprar[i].name}-${itemsAComprar[i].price}`
-        }
 
         localStorage.setItem('ordenes',JSON.stringify(itemsAComprar))
     }
 
-    const crearTarjetaCompra = (name, price, img) => {
+    const crearTarjetaCompra = (comp) => {
         return <div>
             <div className="bg-gradient tarjetacompra p-3">
-                <img src={img} className="tarjetaimg"/>
+                <img src={"img"} className="tarjetaimg"/>
                 <div className="tarjetanamecompra">
-                    {name}
+                    {comp.nombre}
                 </div>
                 <div className="tarjetapricecompra">
-                    ${price}
+                    ${comp.precio}
                 </div>
             </div>
             <div style={{height:"5px", backgroundColor: "black"}}></div>
@@ -106,7 +116,7 @@ const Custombuild = () => {
 
     const listarTarjetasCompra = () => {
         let tarjetas = itemsAComprar.map( (comps) => {
-            return crearTarjetaCompra(comps.name, comps.price, comps.img)
+            return crearTarjetaCompra(comps)
         });
 
         return tarjetas
@@ -150,13 +160,13 @@ const Custombuild = () => {
 
             <div className="col-sm-4">
                 <div className="row pb-5">
-                    <button className="col m-1 btn btn-success" style={{width: "25%"}} onClick={()=>setitemSelect("graphic")} id="graphic">Gráfica</button>
-                    <button className="col-2 m-1 btn btn-success" style={{width: "25%"}} onClick={()=>setitemSelect("processor")} id="processor">Procesador</button>
-                    <button className="col m-1 btn btn-success" style={{width: "25%"}} onClick={()=>setitemSelect("memory")} id="memory">Memoria</button>
-                    <button className="col-3 m-1 btn btn-success" style={{width: "40%"}} onClick={()=>setitemSelect("storage")} id="storage">Almacenamiento</button>
-                    <button className="col-1 m-1 btn btn-success" style={{width: "33%"}} onClick={()=>setitemSelect("cooling")} id="cooling">Ventilación</button>
-                    <button className="col-3 m-1 btn btn-success" style={{width: "30%"}} onClick={()=>setitemSelect("windows")} id="windows">Windows</button>
-                    <button className="col-3 m-1 btn btn-success" style={{width: "33%"}} onClick={()=>setitemSelect("psupply")} id="psupply">Fuente poder</button>
+                    <button className="col m-1 btn btn-success" style={{width: "25%"}} onClick={()=>setitemSelect("Graphics")} id="graphic">Gráfica</button>
+                    <button className="col-2 m-1 btn btn-success" style={{width: "25%"}} onClick={()=>setitemSelect("Processor")} id="processor">Procesador</button>
+                    <button className="col m-1 btn btn-success" style={{width: "25%"}} onClick={()=>setitemSelect("Memory")} id="memory">Memoria</button>
+                    <button className="col-3 m-1 btn btn-success" style={{width: "40%"}} onClick={()=>setitemSelect("Storage")} id="storage">Almacenamiento</button>
+                    <button className="col-1 m-1 btn btn-success" style={{width: "33%"}} onClick={()=>setitemSelect("Cooler")} id="cooling">Ventilación</button>
+                    <button className="col-3 m-1 btn btn-success" style={{width: "30%"}} onClick={()=>setitemSelect("Windows")} id="windows">Windows</button>
+                    <button className="col-3 m-1 btn btn-success" style={{width: "33%"}} onClick={()=>setitemSelect("Power Supply")} id="psupply">Fuente poder</button>
                 </div>
 
                 {listarTarjetas(itemSelec)}

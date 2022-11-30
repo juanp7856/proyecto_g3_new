@@ -18,12 +18,7 @@ import Rankingperipherals from './pages/rankingperipherals';
 import Rankingpcs from './pages/rankingpcs';
 import HistoriaExtraFP from './pages/HIstoriaExtraFP';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import GrafDet from './components/GrafDet';
-import CpuDet from './components/CpuDet';
-import PlacaDet from './components/PlacaDet';
-import RamDet from './components/RamDet';
-import RefliqDet from './components/RefliqDet';
+import ProductoDet from './components/ProductoDet';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -36,7 +31,7 @@ root.render(
         <Route path='proyecto_g3_new/login' element={<Login />} />
         <Route path='proyecto_g3_new/profileInfo' element={<ProfileInfo />} />
         <Route path='proyecto_g3_new/prebuiltselect' element={<PrebuildSelect />} />
-        <Route path='proyecto_g3_new/prebuilt' element={<Prebuilt />} />
+        <Route path='proyecto_g3_new/prebuilt/:id' element={<Prebuilt />} />
         <Route path='proyecto_g3_new/custombuild' element={<Custombuild />} />
         <Route path='proyecto_g3_new/cart' element={<Cart />} />
         <Route path='proyecto_g3_new/checkout' element={<Checkout />} />
@@ -47,12 +42,7 @@ root.render(
         <Route path='proyecto_g3_new/rankingperipherals' element={<Rankingperipherals />} />
         <Route path='proyecto_g3_new/rankingpcs' element={<Rankingpcs />} />
         <Route path='proyecto_g3_new/passwordreset' element={<HistoriaExtraFP />} />
-
-        <Route path='proyecto_g3_new/grafdet' element={<GrafDet />} />
-        <Route path='proyecto_g3_new/cpudet' element={<CpuDet />} />
-        <Route path='proyecto_g3_new/placadet' element={<PlacaDet />} />
-        <Route path='proyecto_g3_new/ramdet' element={<RamDet />} />
-        <Route path='proyecto_g3_new/refliqdet' element={<RefliqDet />} />
+        <Route path='proyecto_g3_new/prod/:id' element={<ProductoDet />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
