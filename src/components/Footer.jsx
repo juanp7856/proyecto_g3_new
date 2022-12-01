@@ -33,11 +33,11 @@ const Footer = () => {
 
                 </div>
 
-                <div>
-                    <a style={{paddingRight:"2%"}} href=""><span id="boot-icon" className="bi bi-facebook" style={{ fontSize: "40px", color: "rgb(255, 255, 255)" }}></span></a>
-                    <a style={{paddingRight:"2%"}} href=""><span id="boot-icon" className="bi bi-twitter" style={{ fontSize: "40px", color: "rgb(255, 255, 255)" }}></span></a>
-                    <a style={{paddingRight:"2%"}} href=""><span id="boot-icon" className="bi bi-instagram" style={{ fontSize: "40px", color: "rgb(255, 255, 255)" }}></span></a>
-                </div>
+                {/* <div>
+                    <a style={{paddingRight:"2%"}}><span id="boot-icon" className="bi bi-facebook" style={{ fontSize: "40px", color: "rgb(255, 255, 255)" }}></span></a>
+                    <a style={{paddingRight:"2%"}}><span id="boot-icon" className="bi bi-twitter" style={{ fontSize: "40px", color: "rgb(255, 255, 255)" }}></span></a>
+                    <a style={{paddingRight:"2%"}}><span id="boot-icon" className="bi bi-instagram" style={{ fontSize: "40px", color: "rgb(255, 255, 255)" }}></span></a>
+                </div> */}
 
             </div>
             <div className="row d-flex aligns-items-center justify-content-center">

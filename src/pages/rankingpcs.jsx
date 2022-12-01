@@ -21,6 +21,7 @@ const Rankingpcs = () => {
 
   useEffect(() => {
       httpObtenerProductos()
+      // eslint-disable-next-line
   }, [build])
 
     return <div classNameName="bg-dark">

@@ -10,26 +10,23 @@ const Header = () => {
 
     const navigate = useNavigate()
 
-    const onClick = () => {
-
-    } 
 
     return <div className="header fs-3 bg-dark" style={ {paddingBottom : "4%"} }>
     <nav>
-        <img src={logo} className="logo" />
+        <img src={logo} className="logo" alt="main"/>
         <ul className="nav-links">
             <li> <a href="/">Inicio</a> </li>
-            <li> <a href="">Acerca</a> </li>
+            <li> <p>Acerca</p> </li>
             <li> <a href="/ticket">Soporte</a> </li>
             <li> 
-                <a href="">Reseñas</a> 
+                <p>Reseñas</p> 
                 <ul className="submenu">
                     <li> <a href="/ratingusers">Usuarios</a> </li>
                     <li> <a href="/ratinginfluencers">Influencers</a> </li>
                 </ul>
             </li>
             <li> 
-                <a href="">Ranking</a> 
+                <p>Ranking</p> 
                 <ul className="submenu">
                     <li> <a href="/rankingperipherals">Periféricos</a> </li>
                     <li> <a href="/rankingpcs">Computadoras</a> </li>

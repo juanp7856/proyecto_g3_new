@@ -35,11 +35,10 @@ const Historia6 = () => {
   };
 
   const enrutarPag = (nombre) => {
+    // eslint-disable-next-line
     listaProductos.map((item) => {
       if(nombre === item.nombre) {
         navigate(`/prod/${item.id}`)
-      } else {
-        return "asd"
       }
     })
   }

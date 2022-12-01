@@ -26,6 +26,13 @@ nav {
     position: relative;
 }
 
+.nav-links li p{
+    text-decoration: none;
+    color:beige;
+    padding: 5px 0;
+    position: relative;
+}
+
 .nav-links li a::after{
     content:" ";
     background: beige;

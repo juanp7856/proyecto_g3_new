@@ -22,6 +22,7 @@ const ProductoDet = () => {
     
       useEffect(() => {
         httpObtenerProductos()
+        // eslint-disable-next-line
       }, [])
 
     const guardarProd = () => {
