@@ -13,7 +13,8 @@ const ProductoDet = () => {
     const [Producto,setProducto] = useState([]);
 
     const httpObtenerProductos = async () => {
-        const resp = await fetch(`${RUTA_BACKEND}/infoproducto?id=${params.id}`)
+        const resp = await fetch(`${RUTA_BACKEND}/infoproducto?id=${params.id}`,{
+          })
         const data = await resp.json()
         setProducto(data)
         console.log(data)

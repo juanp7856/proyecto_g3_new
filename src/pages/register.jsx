@@ -19,7 +19,7 @@ const Register = () => {
     //Acceder a la pagina login
     const createOnClick = async () => {
         if (firstname !== "" && lastname !== "" && email !== "" && password !== "") {
-            navigate("/proyecto_g3_new/login")
+            navigate("/login")
 
             const data = {
                 nombre : firstname,

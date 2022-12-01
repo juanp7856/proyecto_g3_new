@@ -17,7 +17,8 @@ const Custombuild = () => {
     const [productos, setProductos] = useState([]);
 
     const httpObtenerProductos = async () => {
-        const resp = await fetch(`${RUTA_BACKEND}/productos`)
+        const resp = await fetch(`${RUTA_BACKEND}/productos`,{
+          })
         const data = await resp.json()
         setProductos(data)
     }
@@ -31,6 +32,8 @@ const Custombuild = () => {
         productos.map( (producto) => {
             if (producto.categoria === itemSelec) {
                 return productoss.push(producto)
+            } else {
+                return "asd"
             }
         })
         return productoss;
@@ -81,7 +84,7 @@ const Custombuild = () => {
     const crearTarjetaCompra = (comp) => {
         return <div>
             <div className="bg-gradient tarjetacompra p-3">
-                <img src={`${RUTA_IMG}${comp.imagen}`} className="tarjetaimg"/>
+                <img src={`${RUTA_IMG}${comp.imagen}`} className="tarjetaimg" alt=""/>
                 <div className="tarjetanamecompra">
                     {comp.nombre}
                 </div>
@@ -111,8 +114,8 @@ const Custombuild = () => {
                 <h1 className="text-white">¡Arma tu propia PC!</h1>
             </div>
             <div className="mb-5 col-6">
-                <button className="btn btn-light" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/proyecto_g3_new/")}}>ATRÁS</button>
-                <button className="btn btn-success" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/proyecto_g3_new/cart"); guardarOrden()}}>
+                <button className="btn btn-light" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/")}}>ATRÁS</button>
+                <button className="btn btn-success" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/cart"); guardarOrden()}}>
                     <i class="bi bi-cart-fill"></i> CARRITO
                 </button>
             </div>

@@ -1,7 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import Header from "../components/Header"
 import "bootstrap/dist/css/bootstrap.css"
-import { useNavigate } from "react-router-dom"
 
 const HistoriaExtraFP = () => {
     return <div>

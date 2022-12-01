@@ -3,8 +3,6 @@ import Header from "../components/Header"
 import "bootstrap/dist/css/bootstrap.css"
 import ReactPlayer from 'react-player'
 import "../styles/H17.css"
-import MrTop5 from "../assets/MrTop5.jpg"
-import ShowCircuit from "../assets/ShortCircuit.jpg"
 import Footer from "../components/Footer"
 import { RUTA_BACKEND } from "../conf"
 
@@ -12,7 +10,8 @@ const Ratinginfluencers = () => {
     const [listaResenas, setlistaResenas] = useState([])
 
     const httpObtenerResenas = async () => {
-        const resp = await fetch(`${RUTA_BACKEND}/resenas/influencers`)
+        const resp = await fetch(`${RUTA_BACKEND}/resenas/influencers`,{
+          })
         const data = await resp.json()
         setlistaResenas(data)
         console.log(data)

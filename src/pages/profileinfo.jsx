@@ -56,7 +56,7 @@ const ProfileInfo = () => {
 
     const logOut = () => {
         localStorage.setItem('usuario',JSON.stringify([]))
-        navigate("/proyecto_g3_new/login")
+        navigate("/login")
     }
 
     return <div className="bg-dark">
@@ -66,7 +66,7 @@ const ProfileInfo = () => {
             <div className="row ">
                 <div className="col-4 text-white" >
                     <div class="d-grid gap-2">
-                        <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px"}} onClick={()=>{navigate("/proyecto_g3_new/orderHistory")}}>Order History</button>
+                        <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px"}} onClick={()=>{navigate("/orderHistory")}}>Order History</button>
                         <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px"}}>Profile Info</button>
                         <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px"}} onClick={()=>{logOut()}}>Log Out</button>
                     </div>

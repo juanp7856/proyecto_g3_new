@@ -15,7 +15,8 @@ const OrderHistory = () => {
     const navigate = useNavigate();
 
     const httpObtenerOrdenes = async () => {
-        const resp = await fetch(`${RUTA_BACKEND}/orden/productos?id=${usuario.id}`)
+        const resp = await fetch(`${RUTA_BACKEND}/orden/productos?id=${usuario.id}`, {
+          })
         const data = await resp.json()
         setlistaOrdenes(data)
         console.log(data)
@@ -27,7 +28,7 @@ const OrderHistory = () => {
 
     const logOut = () => {
         localStorage.setItem('usuario',JSON.stringify([]))
-        navigate("/proyecto_g3_new/login")
+        navigate("/login")
     }
 
     return <div className="bg-dark">
@@ -38,7 +39,7 @@ const OrderHistory = () => {
                 <div className="col-4 text-white" >
                     <div class="d-grid gap-2">
                         <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px" }}>Order History</button>
-                        <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px" }} onClick={()=>{navigate("/proyecto_g3_new/profileinfo")}}>Profile Info</button>
+                        <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px" }} onClick={()=>{navigate("/profileinfo")}}>Profile Info</button>
                         <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px" }} onClick={()=>{logOut()}}>Log Out</button>
                     </div>
                 </div>

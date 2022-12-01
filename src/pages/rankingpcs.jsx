@@ -12,7 +12,8 @@ const Rankingpcs = () => {
   const [productos, setProductos] = useState([]);
 
   const httpObtenerProductos = async () => {
-    const resp = await fetch(`${RUTA_BACKEND}/build?id=${build}`)
+    const resp = await fetch(`${RUTA_BACKEND}/build?id=${build}`,{
+    })
     const data = await resp.json()
     setProductos(data)
     console.log(data)

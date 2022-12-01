@@ -26,23 +26,23 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='proyecto_g3_new/' element={ <Home /> } />
-        <Route path='proyecto_g3_new/register' element={<Register />} />
-        <Route path='proyecto_g3_new/login' element={<Login />} />
-        <Route path='proyecto_g3_new/profileInfo' element={<ProfileInfo />} />
-        <Route path='proyecto_g3_new/prebuiltselect' element={<PrebuildSelect />} />
-        <Route path='proyecto_g3_new/prebuilt/:id' element={<Prebuilt />} />
-        <Route path='proyecto_g3_new/custombuild' element={<Custombuild />} />
-        <Route path='proyecto_g3_new/cart' element={<Cart />} />
-        <Route path='proyecto_g3_new/checkout' element={<Checkout />} />
-        <Route path='proyecto_g3_new/orderHistory' element={<OrderHistory />} />
-        <Route path='proyecto_g3_new/ticket' element={<Ticket />} />
-        <Route path='proyecto_g3_new/ratingusers' element={<Ratingusers />} />
-        <Route path='proyecto_g3_new/ratinginfluencers' element={<Ratinginfluencers />} />
-        <Route path='proyecto_g3_new/rankingperipherals' element={<Rankingperipherals />} />
-        <Route path='proyecto_g3_new/rankingpcs' element={<Rankingpcs />} />
-        <Route path='proyecto_g3_new/passwordreset' element={<HistoriaExtraFP />} />
-        <Route path='proyecto_g3_new/prod/:id' element={<ProductoDet />} />
+        <Route path='/' element={ <Home /> } />
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/profileInfo' element={<ProfileInfo />} />
+        <Route path='/prebuiltselect' element={<PrebuildSelect />} />
+        <Route path='/prebuilt/:id' element={<Prebuilt />} />
+        <Route path='/custombuild' element={<Custombuild />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/orderHistory' element={<OrderHistory />} />
+        <Route path='/ticket' element={<Ticket />} />
+        <Route path='/ratingusers' element={<Ratingusers />} />
+        <Route path='/ratinginfluencers' element={<Ratinginfluencers />} />
+        <Route path='/rankingperipherals' element={<Rankingperipherals />} />
+        <Route path='/rankingpcs' element={<Rankingpcs />} />
+        <Route path='/passwordreset' element={<HistoriaExtraFP />} />
+        <Route path='/prod/:id' element={<ProductoDet />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

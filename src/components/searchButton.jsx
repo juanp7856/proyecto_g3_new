@@ -19,7 +19,8 @@ const Historia6 = () => {
     }
 
     const httpObtenerProductos = async () => {
-      const resp = await fetch(`${RUTA_BACKEND}/productos`)
+      const resp = await fetch(`${RUTA_BACKEND}/productos`,{
+      })
       const data = await resp.json()
       setlistaProductos(data)
       console.log(data)
@@ -36,7 +37,9 @@ const Historia6 = () => {
   const enrutarPag = (nombre) => {
     listaProductos.map((item) => {
       if(nombre === item.nombre) {
-        navigate(`/proyecto_g3_new/prod/${item.id}`)
+        navigate(`/prod/${item.id}`)
+      } else {
+        return "asd"
       }
     })
   }

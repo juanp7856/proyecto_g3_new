@@ -19,17 +19,17 @@ const Prebuilt = () => {
     const navigate = useNavigate();
 
     const httpObtenerProductos = async () => {
-        const resp = await fetch(`${RUTA_BACKEND}/build?id=${params.id}`)
+        const resp = await fetch(`${RUTA_BACKEND}/build?id=${params.id}`,{
+          })
         const data = await resp.json()
         setProductos(data)
-        console.log(data)
     }
 
     let montoTotal = 0
 
     useEffect(() => {
         httpObtenerProductos()
-
+        // eslint-disable-next-line
     }, [])
 
     const agregarCompra = () => {
@@ -37,7 +37,7 @@ const Prebuilt = () => {
             return itemsAComprar.push(producto)
         })
         localStorage.setItem('ordenes',JSON.stringify(itemsAComprar))
-        navigate("/proyecto_g3_new/cart")
+        navigate("/cart")
     }
 
     return <div className="bg-dark">
@@ -48,7 +48,7 @@ const Prebuilt = () => {
                 <h1 className="text-white">¡Tu PC optimizada!</h1>
             </div>
             <div className="mb-5 col-6">
-                <button className="btn btn-light" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/proyecto_g3_new/prebuiltselect")}}>ATRÁS</button>
+                <button className="btn btn-light" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/prebuiltselect")}}>ATRÁS</button>
                 <button className="btn btn-success" style={{width: "125px", marginRight: "15px"}} onClick={agregarCompra}>
                     <i class="bi bi-cart-fill"></i> CARRITO
                 </button>

@@ -65,7 +65,7 @@ const Cart = () => {
 
             <div className="mb-5" style={{ width: "50%", float: "right"}}>
                        
-                <button className="btn btn-success" style={{ width: "125px", marginLeft: "15px" }} onClick={()=>{navigate("/proyecto_g3_new/checkout")}}>
+                <button className="btn btn-success" style={{ width: "125px", marginLeft: "15px" }} onClick={()=>{navigate("/checkout")}}>
                        <i class="bi bi-cart-fill"></i> CHECKOUT
                 </button>
 

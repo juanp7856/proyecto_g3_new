@@ -12,7 +12,8 @@ const Ratingusers = () => {
     const [listaResenas, setlistaResenas] = useState([])
 
     const httpObtenerResenas = async () => {
-        const resp = await fetch(`${RUTA_BACKEND}/resenas/usuarios`)
+        const resp = await fetch(`${RUTA_BACKEND}/resenas/usuarios`,{
+          })
         const data = await resp.json()
         setlistaResenas(data)
         console.log(data)

@@ -28,7 +28,7 @@ const Ticket = () => {
         }
 
         if (usuario.id === null || usuario.id === undefined) {
-            navigate("/proyecto_g3_new/login")
+            navigate("/login")
         } else {
             await fetch(`${RUTA_BACKEND}/reporte/generar`,{
                 method : 'POST',
