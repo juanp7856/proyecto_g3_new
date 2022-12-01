@@ -19,10 +19,13 @@ const Login = () => {
 
     const logInOnclick = async () => {
         if (email !== "" && password !== "") {
-            navigate("/proyecto_g3_new/")
+            // navigate("/proyecto_g3_new/")
             const resp = await fetch(`${RUTA_BACKEND}/login?correo=${email}&contrasena=${password}`)
             const data = await resp.json()
             console.log(data)
+            if(resp !== "notfound"){
+                navigate("/proyecto_g3_new/")
+            }
             localStorage.setItem('usuario',JSON.stringify(data))
         }
     }

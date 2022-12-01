@@ -3,7 +3,7 @@ import Header from "../components/Header"
 import "bootstrap/dist/css/bootstrap.css"
 import "../styles/H8.css"
 import { useNavigate } from "react-router-dom"
-import { useEffect } from "react"
+import { RUTA_IMG } from "../conf"
 
 
 let itemsAComprar = JSON.parse(localStorage.getItem('ordenes') || "[]")
@@ -14,12 +14,13 @@ const Cart = () => {
 
     const [active,setActive] = useState(false)
 
+
     const crearTarjeta = (comp) => {
 
 
-        return <div className="tarjetaco pt-4 mb-3">
+        return <div className="tarjetaco p-6 mb-3">
             <div style={{width:"20%",float: "left"}}>
-                <img className="listaimg" src={"img"} alt="IMG"/>
+                <img className="listaimg" src={`${RUTA_IMG}${comp.imagen}`} alt="IMG"/>
             </div>
             <div style={{width:"80%", float: "right", marginBottom: "20px"}}>
                 <div style={{width:"50%", float: "left"}}><p className="listatext">{comp.nombre}</p></div>
@@ -39,20 +40,6 @@ const Cart = () => {
             </div>
         </div>
     }
-
-    // const onClickFunc = () => {
-    //     localStorage.setItem('monto',JSON.stringify({value: montoTotal}))
-    //     navigate("/proyecto_g3_new/checkout")
-    // }
-
-    // const renderizarpag = () => {
-    //     setActive(true)
-    //     setTimeout(()=>{setActive(false)},1);
-    // }
-
-    // useEffect(() => {
-    //     renderizarpag()
-    // }, [])
     
     const listarTarjetas = (active) => {
 
@@ -66,11 +53,6 @@ const Cart = () => {
 
     return <div className="bg-dark">
         <Header />
-
-        
-
-        
-
 
         <div className="container"  >
             

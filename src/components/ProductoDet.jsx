@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react"
 import Header from "./Header"
 import "bootstrap/dist/css/bootstrap.css"
 import "../styles/H6.css"
-import GRAFICA from "../assets/pc_comps/grafica.png"
 import { useParams } from "react-router-dom"
-import { RUTA_BACKEND } from "../conf"
+import { RUTA_BACKEND, RUTA_IMG } from "../conf"
 
 let itemsAComprar = JSON.parse(localStorage.getItem('ordenes') || "[]")
 
@@ -21,7 +20,7 @@ const ProductoDet = () => {
       }
     
       useEffect(() => {
-          httpObtenerProductos()
+        httpObtenerProductos()
       }, [])
 
     const guardarProd = () => {
@@ -41,7 +40,7 @@ const ProductoDet = () => {
                     <div className="bg-light p-2 text-dark bg-opacity-10" style={{width:"60%" }}>
 
                         <div style={{marginLeft:"10%", width:"50%"}}>
-                            <img  width={250} height={250} src={GRAFICA} alt="GRAFICA" />
+                            <img  width={250} height={250} src={`${RUTA_IMG}${Producto.imagen}`} alt="GRAFICA" />
                         </div>
 
 
@@ -58,7 +57,7 @@ const ProductoDet = () => {
                     <div className="bg-primary p-2 text-dark bg-opacity-25">
 
                         <h1>{Producto.nombre}</h1>
-                        <h2><b>{Producto.precio}</b></h2>
+                        <h2><b>${Producto.precio}</b></h2>
 
                         <h3>Shipping calculated at checkout.</h3>
 

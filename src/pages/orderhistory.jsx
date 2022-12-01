@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import "../styles/H14.css"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
-import { RUTA_BACKEND } from "../conf"
+import { RUTA_BACKEND, RUTA_IMG } from "../conf"
 
 let usuario = JSON.parse(localStorage.getItem('usuario') || "[]")
 
@@ -49,7 +49,7 @@ const OrderHistory = () => {
                             listaOrdenes.map((orden)=>{
                                 return <div className="row fila">
                                 <div className="col">
-                                <p><img className="listaimg" src="{CPU}" alt="" /> </p>
+                                <p><img className="listaimg" src={`${RUTA_IMG}${orden.imagen}`} alt="" /> </p>
                                 </div>
                                 <div className="col">
                                 <p className="listatext">{orden.nombre}</p>

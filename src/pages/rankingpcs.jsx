@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css"
 
 import PC from "../assets/pc_recomendada.png"
 import { useState } from "react"
-import { RUTA_BACKEND } from "../conf"
+import { RUTA_BACKEND, RUTA_IMG } from "../conf"
 
 
 const Rankingpcs = () => {
@@ -45,7 +45,7 @@ const Rankingpcs = () => {
                             {
                               productos.map((producto)=>{
                                 return <div className="row mb-2">
-                                <div className="col-4 fs-6 d-flex justify-content-center align-items-center"><img src= "{CPU}" className="CPU" style= {{ width: "80px", height:"65px"}} alt=""/></div>
+                                <div className="col-4 fs-6 d-flex justify-content-center align-items-center"><img src= {`${RUTA_IMG}${producto.imagen}`} className="CPU" style= {{ width: "80px", height:"65px"}} alt=""/></div>
                                 <div className="col-4 fs-6 d-flex justify-content-center align-items-center">{producto.nombre}</div>
                                 <div className="col-4 fs-6 d-flex justify-content-center align-items-center">${producto.precio}</div>
                                 </div>
@@ -73,7 +73,7 @@ const Rankingpcs = () => {
                             {
                               productos.map((producto)=>{
                                 return <div className="row mb-2">
-                                <div className="col-4 fs-6 d-flex justify-content-center align-items-center"><img src= "{CPU}" className="CPU" style= {{ width: "80px", height:"65px"}} alt=""/></div>
+                                <div className="col-4 fs-6 d-flex justify-content-center align-items-center"><img src= {`${RUTA_IMG}${producto.imagen}`} className="CPU" style= {{ width: "80px", height:"65px"}} alt=""/></div>
                                 <div className="col-4 fs-6 d-flex justify-content-center align-items-center">{producto.nombre}</div>
                                 <div className="col-4 fs-6 d-flex justify-content-center align-items-center">${producto.precio}</div>
                                 </div>
@@ -101,7 +101,7 @@ const Rankingpcs = () => {
                             {
                               productos.map((producto)=>{
                                 return <div className="row mb-2">
-                                <div className="col-4 fs-6 d-flex justify-content-center align-items-center"><img src= "{CPU}" className="CPU" style= {{ width: "80px", height:"65px"}} alt=""/></div>
+                                <div className="col-4 fs-6 d-flex justify-content-center align-items-center"><img src= {`${RUTA_IMG}${producto.imagen}`} className="CPU" style= {{ width: "80px", height:"65px"}} alt=""/></div>
                                 <div className="col-4 fs-6 d-flex justify-content-center align-items-center">{producto.nombre}</div>
                                 <div className="col-4 fs-6 d-flex justify-content-center align-items-center">${producto.precio}</div>
                                 </div>
@@ -129,7 +129,7 @@ const Rankingpcs = () => {
                             {
                               productos.map((producto)=>{
                                 return <div className="row mb-2">
-                                <div className="col-4 fs-6 d-flex justify-content-center align-items-center"><img src= "{CPU}" className="CPU" style= {{ width: "80px", height:"65px"}} alt=""/></div>
+                                <div className="col-4 fs-6 d-flex justify-content-center align-items-center"><img src= {`${RUTA_IMG}${producto.imagen}`} className="CPU" style= {{ width: "80px", height:"65px"}} alt=""/></div>
                                 <div className="col-4 fs-6 d-flex justify-content-center align-items-center">{producto.nombre}</div>
                                 <div className="col-4 fs-6 d-flex justify-content-center align-items-center">${producto.precio}</div>
                                 </div>

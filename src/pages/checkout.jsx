@@ -7,8 +7,7 @@ import Googlepay from "../assets/googlepay.png"
 import user from "../assets/user.png"
 import "../styles/H13.css"
 import { useNavigate } from "react-router-dom"
-import { RUTA_BACKEND } from "../conf"
-import { useEffect } from "react"
+import { RUTA_BACKEND, RUTA_IMG } from "../conf"
 
 
 let itemsAComprar = JSON.parse(localStorage.getItem('ordenes') || "[]")
@@ -20,15 +19,11 @@ const Checkout = () => {
 
     const crearTarjeta = (comp) => {
         return <div className="tarjetaco">
-            <img className="listaimg" src={"img"} alt="IMG"/>
+            <img className="listaimg" src={`${RUTA_IMG}${comp.imagen}`} alt="IMG"/>
             <div style={{width:"50%", float: "left"}}><p className="listatext">{comp.nombre}</p></div>
             <div style={{width:"25%", float: "left"}}><p className="listapr">{comp.precio}$</p></div>
         </div>
     }
-
-    useEffect(() => {
-        
-    }, [])
 
     const listarTarjetas = () => {
 
@@ -44,7 +39,7 @@ const Checkout = () => {
         let listaVacia = []
 
         itemsAComprar.map((comp)=>{
-            montoTotal = montoTotal + comp.precio
+            return montoTotal = montoTotal + comp.precio
         })
 
         const data = {

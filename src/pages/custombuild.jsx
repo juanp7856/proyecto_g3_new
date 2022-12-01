@@ -3,12 +3,10 @@ import Header from "../components/Header"
 import "bootstrap/dist/css/bootstrap.css"
 import PC from "../assets/pc_recomendada.png"
 import "../styles/H12.css"
-import CPU from "../assets/pc_comps/cpu.png"
-import {graphic, processor, memory, storage, cooling, windows, psupply} from "../modules/components.js"
 import { useNavigate } from "react-router-dom"
-import { RUTA_BACKEND } from "../conf"
+import { RUTA_BACKEND, RUTA_IMG } from "../conf"
 
-let itemsAComprar = []
+let itemsAComprar = JSON.parse(localStorage.getItem('ordenes') || "[]")
 
 
 const Custombuild = () => {
@@ -32,34 +30,16 @@ const Custombuild = () => {
         let productoss = []
         productos.map( (producto) => {
             if (producto.categoria === itemSelec) {
-                productoss.push(producto)
+                return productoss.push(producto)
             }
         })
         return productoss;
-        // if (itemSelec === "Graphics") {
-        //     const resp = await fetch(`${RUTA_BACKEND}/productos/categoria?cat=Graphics`)
-        //     const data = await resp.json()
-        //     setProductos(data)
-        //     return productos;
-        // } else if (itemSelec === "Processor") {
-        //     return processor;
-        // } else if (itemSelec === "Memory") {
-        //     return memory;
-        // } else if (itemSelec === "storage") {
-        //     return storage;
-        // } else if (itemSelec === "cooling") {
-        //     return cooling;
-        // } else if (itemSelec === "windows") {
-        //     return windows;
-        // } else if (itemSelec === "psupply") {
-        //     return psupply;
-        // }
     }
 
     const crearTarjeta = (comp) => {
         
         return <div className="bg-white tarjeta">
-            <img src={"img"} className="tarjetaimg"/>
+            <img src={`${RUTA_IMG}${comp.imagen}`} className="tarjetaimg" alt=""/>
             {/* <div className="col-2">
                 <img src={PC} className="tarjetaimg"/>
             </div> */}
@@ -101,7 +81,7 @@ const Custombuild = () => {
     const crearTarjetaCompra = (comp) => {
         return <div>
             <div className="bg-gradient tarjetacompra p-3">
-                <img src={"img"} className="tarjetaimg"/>
+                <img src={`${RUTA_IMG}${comp.imagen}`} className="tarjetaimg"/>
                 <div className="tarjetanamecompra">
                     {comp.nombre}
                 </div>

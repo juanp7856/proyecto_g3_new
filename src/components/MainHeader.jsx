@@ -10,6 +10,10 @@ const MainHeader = () => {
 
     const navigate = useNavigate();
 
+    const onClick = (ruta) => {
+        navigate()
+    } 
+
     return <div className="header fs-3 " style={{ paddingBottom: "4%" }}>
         <nav>
             <ul className="nav-links" style={{marginLeft: "35%"}}>

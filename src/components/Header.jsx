@@ -10,6 +10,10 @@ const Header = () => {
 
     const navigate = useNavigate()
 
+    const onClick = () => {
+
+    } 
+
     return <div className="header fs-3 bg-dark" style={ {paddingBottom : "4%"} }>
     <nav>
         <img src={logo} className="logo" />
