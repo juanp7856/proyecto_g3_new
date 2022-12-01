@@ -15,21 +15,21 @@ const Header = () => {
     <nav>
         <img src={logo} className="logo" alt="main"/>
         <ul className="nav-links">
-            <li> <a href="/">Inicio</a> </li>
+            <li> <button className="botonnav" onClick={()=>{navigate('/')}}>Inicio</button> </li>
             <li> <p>Acerca</p> </li>
-            <li> <a href="/ticket">Soporte</a> </li>
+            <li> <button className="botonnav" onClick={()=>{navigate('/ticket')}}>Soporte</button> </li>
             <li> 
                 <p>Reseñas</p> 
                 <ul className="submenu">
-                    <li> <a href="/ratingusers">Usuarios</a> </li>
-                    <li> <a href="/ratinginfluencers">Influencers</a> </li>
+                    <li> <button className="botonnav" onClick={()=>{navigate('/ratingusers')}}>Usuarios</button> </li>
+                    <li> <button className="botonnav" onClick={()=>{navigate('/ratinginfluencers')}}>Influencers</button> </li>
                 </ul>
             </li>
             <li> 
                 <p>Ranking</p> 
                 <ul className="submenu">
-                    <li> <a href="/rankingperipherals">Periféricos</a> </li>
-                    <li> <a href="/rankingpcs">Computadoras</a> </li>
+                    <li> <button className="botonnav" onClick={()=>{navigate('/rankingperipherals')}}>Periféricos</button> </li>
+                    <li> <button className="botonnav" onClick={()=>{navigate('/rankingpcs')}}>Computadoras</button> </li>
                 </ul>
             </li>
         </ul>
