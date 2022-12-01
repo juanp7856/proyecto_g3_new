@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import Header from "../components/Header"
 import "bootstrap/dist/css/bootstrap.css"
 import { useNavigate } from "react-router-dom"
+import { RUTA_BACKEND } from "../conf"
+
 
 const Login = () => {
 
@@ -15,11 +17,14 @@ const Login = () => {
 
     }
 
-    const logInOnclick = () => {
+    const logInOnclick = async () => {
         if (email !== "" && password !== "") {
             navigate("/proyecto_g3_new/")
+            const resp = await fetch(`${RUTA_BACKEND}/login?correo=${email}&contrasena=${password}`)
+            const data = await resp.json()
+            console.log(data)
+            localStorage.setItem('usuario',JSON.stringify(data))
         }
-
     }
 
     return <div className="bg-dark">
