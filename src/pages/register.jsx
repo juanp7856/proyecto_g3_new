@@ -5,6 +5,7 @@ import "../styles/H1y2.css"
 import "../styles/H1y2.css"
 
 import { useNavigate } from "react-router-dom"
+import { RUTA_BACKEND } from "../conf"
 
 
 const Register = () => {
@@ -16,9 +17,22 @@ const Register = () => {
     const navigate = useNavigate();
 
     //Acceder a la pagina login
-    const createOnClick = () => {
+    const createOnClick = async () => {
         if (firstname !== "" && lastname !== "" && email !== "" && password !== "") {
-            navigate("/login")
+            navigate("/proyecto_g3_new/login")
+
+            const data = {
+                nombre : firstname,
+                apellido : lastname,
+                correo : email,
+                password : password
+            }
+
+            await fetch(`${RUTA_BACKEND}/register`,{
+                method : 'POST',
+                headers : {"Content-Type" : "application/json"},
+                body : JSON.stringify(data)
+            })
         }
     }
 
