@@ -7,30 +7,61 @@ import Googlepay from "../assets/googlepay.png"
 import user from "../assets/user.png"
 import "../styles/H13.css"
 import { useNavigate } from "react-router-dom"
+import { RUTA_BACKEND } from "../conf"
+import { useEffect } from "react"
 
 
 let itemsAComprar = JSON.parse(localStorage.getItem('ordenes') || "[]")
+let usuario = JSON.parse(localStorage.getItem('usuario') || "[]")
 
 const Checkout = () => {
 
     const navigate = useNavigate();
 
-    const crearTarjeta = (name, price, img) => {
-        console.log("asd")
+    const crearTarjeta = (comp) => {
         return <div className="tarjetaco">
-            <img className="listaimg" src={img} alt="IMG"/>
-            <div style={{width:"50%", float: "left"}}><p className="listatext">{name}</p></div>
-            <div style={{width:"25%", float: "left"}}><p className="listapr">{price}$</p></div>
+            <img className="listaimg" src={"img"} alt="IMG"/>
+            <div style={{width:"50%", float: "left"}}><p className="listatext">{comp.nombre}</p></div>
+            <div style={{width:"25%", float: "left"}}><p className="listapr">{comp.precio}$</p></div>
         </div>
     }
+
+    useEffect(() => {
+        
+    }, [])
 
     const listarTarjetas = () => {
 
         let tarjetas = itemsAComprar.map( (comps) => {
-            return crearTarjeta(comps.name, comps.price, comps.img)
+            return crearTarjeta(comps)
         });
 
         return tarjetas
+    }
+
+    const realizarCompra = async () => {
+        let montoTotal = 0
+        let listaVacia = []
+
+        itemsAComprar.map((comp)=>{
+            montoTotal = montoTotal + comp.precio
+        })
+
+        const data = {
+            uId : usuario.id,
+            monto : montoTotal,
+            direc : usuario.direccion,
+            productos : itemsAComprar
+        }
+
+        localStorage.setItem('ordenes',JSON.stringify(listaVacia))
+        navigate("/proyecto_g3_new/")
+
+        await fetch(`${RUTA_BACKEND}/orden/generar`,{
+            method : 'POST',
+            headers : {"Content-Type" : "application/json"},
+            body : JSON.stringify(data)
+        })
     }
 
     return <div className="bg-dark">
@@ -146,7 +177,7 @@ const Checkout = () => {
                     </div>
                 </div>
 
-                <button type="button" className="btn both3 w-100 mr-1">SHOP</button>
+                <button type="button" className="btn both3 w-100 mr-1" onClick={realizarCompra}>SHOP</button>
             </div>
         </div>
     </div>
