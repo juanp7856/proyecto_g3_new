@@ -8,7 +8,7 @@ import { RUTA_BACKEND, RUTA_IMG } from "../conf"
 
 
 const Rankingpcs = () => {
-  const [build, setBuild] = useState('');
+  const [build, setBuild] = useState("f00eab03-4df1-4bc9-ab84-7f02db176a90");
   const [productos, setProductos] = useState([]);
 
   const httpObtenerProductos = async () => {

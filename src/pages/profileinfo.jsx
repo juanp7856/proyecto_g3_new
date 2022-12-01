@@ -12,14 +12,14 @@ const ProfileInfo = () => {
 
     const navigate = useNavigate();
 
-    const [nombre,setNombre] = useState("");
-    const [apellido,setApellido] = useState("");
-    const [correo,setCorreo] = useState("");
-    const [direccion,setDireccion] = useState("");
-    const [departamento,setDepartamento] = useState("");
-    const [ciudad,setCiudad] = useState("");
-    const [cpostal,setCpostal] = useState("");
-    const [telefono,setTelefono] = useState("");
+    const [nombre,setNombre] = useState(usuario.nombre);
+    const [apellido,setApellido] = useState(usuario.apellido);
+    const [correo,setCorreo] = useState(usuario.correo);
+    const [direccion,setDireccion] = useState(usuario.direccion);
+    const [departamento,setDepartamento] = useState(usuario.departamento);
+    const [ciudad,setCiudad] = useState(usuario.ciudad);
+    const [cpostal,setCpostal] = useState(usuario.codigo_postal);
+    const [telefono,setTelefono] = useState(usuario.telefono);
 
     const actualizarDatos  = async () => {
         const data = {
@@ -43,16 +43,16 @@ const ProfileInfo = () => {
         })
     }
 
-    useEffect(() => {
-        setNombre(usuario.nombre)
-        setApellido(usuario.apellido)
-        setCorreo(usuario.correo)
-        setDireccion(usuario.direccion)
-        setDepartamento(usuario.departamento)
-        setCiudad(usuario.ciudad)
-        setCpostal(usuario.codigo_postal)
-        setTelefono(usuario.telefono)
-    }, [])
+    // useEffect(() => {
+    //     setNombre(usuario.nombre)
+    //     setApellido(usuario.apellido)
+    //     setCorreo(usuario.correo)
+    //     setDireccion(usuario.direccion)
+    //     setDepartamento(usuario.departamento)
+    //     setCiudad(usuario.ciudad)
+    //     setCpostal(usuario.codigo_postal)
+    //     setTelefono(usuario.telefono)
+    // }, [])
 
     const logOut = () => {
         localStorage.setItem('usuario',JSON.stringify([]))
