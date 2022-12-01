@@ -3,7 +3,6 @@ import Header from "../components/Header"
 import "bootstrap/dist/css/bootstrap.css"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
-import { useEffect } from "react"
 import { RUTA_BACKEND } from "../conf"
 
 let usuario = JSON.parse(localStorage.getItem('usuario') || "[]")
