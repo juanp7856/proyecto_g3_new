@@ -41,7 +41,7 @@ root.render(
         <Route path='/ratinginfluencers' element={<Ratinginfluencers />} />
         <Route path='/rankingperipherals' element={<Rankingperipherals />} />
         <Route path='/rankingpcs' element={<Rankingpcs />} />
-        <Route path='/passwordreset' element={<HistoriaExtraFP />} />
+        <Route path='/historiaextra' element={<HistoriaExtraFP />} />
         <Route path='/prod/:id' element={<ProductoDet />} />
       </Routes>
     </BrowserRouter>

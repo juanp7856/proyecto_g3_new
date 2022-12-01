@@ -19,6 +19,10 @@ const Home = () => {
         navigate("/prebuiltselect")
     }
 
+    const historiaExtra = () => {
+        navigate("/historiaextra")
+    }
+
     return <div className="body bg-dark">
         <MainHeader />
 
@@ -37,11 +41,14 @@ const Home = () => {
                     <button type="button" className="both3 btn btn-danger border-0" style={{ marginLeft: "1%" }}
                         onClick={customBuildonClick}
                     >Advance building</button>
+                    <button type="button" className="both3 btn btn-danger border-0" style={{ marginLeft: "1%" }}
+                        onClick={historiaExtra}
+                    >Batman Juegos</button>
                 </div>
             </div>
         </div>
 
-
+        
         <Footer />
     </div>
 }
